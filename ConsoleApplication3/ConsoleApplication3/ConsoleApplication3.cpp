@@ -6,21 +6,29 @@ using namespace std;
 int main()
 {
 	struct Time {
-		unsigned int year;
-		enum month
+		unsigned int year=1;
+		enum EMonth
 		{
-					 1,2,3,4,5,6,7,8,9,10,11,12
+			one=1,
+			two,
+			three,
+			four,
+			five,
+			six
 		};
-		unsigned day;
-		unsigned hour;
-		unsigned minute;
-		unsigned sec;
+		EMonth month=EMonth::one;
+		unsigned day=1;
+		unsigned hour=1;
+		unsigned minute=1;
+		unsigned sec=1;
    };
-	Time now = { 2020,2,14,6,49,35 };
+	Time now = { 2020,Time::EMonth::one,14,6,49,35 };
+	int nMonth;
 	cout << "please input year:" << endl;
 	cin >>now.year;
 	cout << "please input month:" << endl;
-	cin >> now.month;
+	cin >> nMonth;
+	now.month = Time::EMonth(nMonth);
 	cout << "please input day:" << endl;
 	cin >> now.day;
 	cout << "please input hour:" << endl;
