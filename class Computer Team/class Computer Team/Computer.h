@@ -2,6 +2,8 @@
 #include "CPU.h"
 #include "CDROM.h"
 #include "RAM.h"
+
+//私有变量直接加private修饰
 class Computer
 {
 	CPU cpu;
